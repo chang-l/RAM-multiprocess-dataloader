@@ -99,3 +99,4 @@ class TorchShmSerializedList(TorchSerializedList):
             self._addr, self._lst = mp.reduction.ForkingPickler.loads(handle)
             print(f"Worker {comm.get_rank()} obtains a dataset of length="
                   f"{len(self)} from its local leader.")
+        #comm.synchronize()
